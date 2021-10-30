@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Login</title>
+</head>
+<body>
+<p th:if="${param.error}" th:text="${param.error}" style="color: red"></p>
+<a th:href="@{/oauth2/authorization/facebook}" target="_blank">
+    FACEBOOK
+</a>
+
+<a th:href="@{/oauth2/authorization/google}" target="_blank">
+    GOOGLE
+</a>
+
+<a th:href="@{/oauth2/authorization/github}" target="_blank">
+    GITHUB
+</a>
+<form th:action="@{/authenticate}" method="post">
+    <input type="email" placeholder="Enter a valid email address" name="username">
+    <input type="password" placeholder="Enter password" name="password"/>
+    <input type="submit" value="login">
+    <a th:href="@{/signin}">Criar conta</a>
+</form>
+</body>

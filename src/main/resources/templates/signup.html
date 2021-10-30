@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+    <title>Sing Up</title>
+</head>
+<body>
+<h1>Crie sua conta agora!!</h1>
+<form th:action="@{/signup}" method="post">
+    <input type="text" class="name-field" placeholder="name" name="name"><br>
+    <input type="email" class="username-field" placeholder="username" name="email"><br>
+    <input type="password" class="password-field" placeholder="password" name="password"><br>
+    <input class="submit-button" type="submit" value="CADASTRAR">
+</form>
+</body>
+</html>

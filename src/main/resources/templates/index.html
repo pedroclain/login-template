@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Demo</title>
+</head>
+<body>
+<h1>Index</h1>
+<a th:href="@{/login}" th:if="${user == null}">Login in</a>
+<div th:if="${user}">
+    <p>Ola <span th:text="${user.name}"></span></p><br>
+    <a th:href="@{/profile}">ver meu perfil</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Profile</title>
+</head>
+<body>
+<h1>Profile</h1>
+<p>Ola <span th:text="${user.name}"></span>. Voce esta autenticado</p><br>
+<p>Email: <span th:text="${user.email}"></span></p>
+<p>Provedor: <span th:text="${user.provider}"></span></p>
+<a th:href="@{/logout}">Logout</a>
+</body>
+</html>
