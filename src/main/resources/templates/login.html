@@ -1,27 +1,41 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <title>Login</title>
+	<title>bootstrap</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
 </head>
 <body>
-<p th:if="${param.error}" th:text="${param.error}" style="color: red"></p>
-<a th:href="@{/oauth2/authorization/facebook}" target="_blank">
-    FACEBOOK
-</a>
+<!------ Include the above in your HEAD tag ---------->
+<div class="alert alert-success w3-center w3-animate-top">Logout feito com sucesso!</div>
+<div class="container login-container">
 
-<a th:href="@{/oauth2/authorization/google}" target="_blank">
-    GOOGLE
-</a>
+	<h1 class="m-5"><span class="text-danger">M</span>eu App</h1>
+	<div class="row justify-content-center">
+		<div class="col-6">
+	   	 	<h3 class="text-danger pb-3">Login</h3>
+	    	<form>
+	            <div class="form-group">
+	                <input type="text" class="form-control" placeholder="Email" value="" />
+	            </div>
+	            <div class="form-group">
+	                <input type="password" class="form-control" placeholder="Senha" value="" />
+	            </div>
+	            <div class="form-group">
+	                <input type="submit" class="btn btn-danger" value="Login" />
+	            </div>
+	            <div class="form-group">
+	                <a href="register.html" class="text-danger">Criar conta</a>
+	            </div>
+	    	</form>
+	    </div>
+	</div>
+</div>
 
-<a th:href="@{/oauth2/authorization/github}" target="_blank">
-    GITHUB
-</a>
-<form th:action="@{/authenticate}" method="post">
-    <input type="email" placeholder="Enter a valid email address" name="username">
-    <input type="password" placeholder="Enter password" name="password"/>
-    <input type="submit" value="login">
-    <a th:href="@{/signup}">Criar conta</a>
-</form>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+</html>
