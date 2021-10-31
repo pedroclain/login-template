@@ -4,38 +4,83 @@
 	<title>bootstrap</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+	<style type="text/css">
+		.social-icon {
+			padding: 15px;
+			width: 55px;
+			text-align: center;
+			margin: 0 10px;
+			border-radius: 5px;
+		}
+
+		.social-icon.facebook {
+			background-color: #3B5998;
+			
+		}
+
+		.social-icon.google {
+			background-color: #D62D20;
+		}
+
+		.social-icon.github {
+			background-color: black;
+		}
+
+		.social-icon i {
+			size: 15px;
+			color: white;
+
+		}
+	</style>
 
 </head>
 <body>
 <!------ Include the above in your HEAD tag ---------->
-<div class="alert alert-success w3-center w3-animate-top">Logout feito com sucesso!</div>
-<div class="container login-container">
+<div class="alert alert-success w3-center w3-animate-top" th:if="${param.logout}">Logout feito com sucesso!</div>
+<div class="alert alert-danger w3-center w3-animate-top" th:if="${param.error}" th:text="${param.error}"></div>
+<div class="container">
 
 	<h1 class="m-5"><span class="text-danger">M</span>eu App</h1>
 	<div class="row justify-content-center">
 		<div class="col-6">
 	   	 	<h3 class="text-danger pb-3">Login</h3>
-	    	<form>
+	    	<form th:action="@{/authenticate}" method="post">
 	            <div class="form-group">
-	                <input type="text" class="form-control" placeholder="Email" value="" />
+	                <input type="text" class="form-control" placeholder="Email" name="username"/>
 	            </div>
 	            <div class="form-group">
-	                <input type="password" class="form-control" placeholder="Senha" value="" />
+	                <input type="password" class="form-control" placeholder="Senha" name="password" />
 	            </div>
 	            <div class="form-group">
 	                <input type="submit" class="btn btn-danger" value="Login" />
 	            </div>
 	            <div class="form-group">
-	                <a href="register.html" class="text-danger">Criar conta</a>
+	                <a th:href="@{/signup}" class="text-danger">Criar conta</a>
 	            </div>
 	    	</form>
+	    	<p class="text-center text-secondary">Or</p>
+	    	<div class="d-flex justify-content-center">
+	    		<a th:href="@{/oauth2/authorization/facebook}">
+	    		<div class="facebook social-icon">
+	    			<i class="fab fa-facebook-f"></i>
+	    		</div>
+		    	</a>
+		    	<a th:href="@{/oauth2/authorization/google}">
+		    		<div class="google social-icon">
+		    			<i class="fab fa-google"></i>
+		    		</div>
+		    	</a>
+		    	<a th:href="@{/oauth2/authorization/github}">
+		    		<div class="github social-icon">
+		    			<i class="fab fa-github"></i>
+		    		</div>
+		    	</a>
+	    	</div>
 	    </div>
 	</div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

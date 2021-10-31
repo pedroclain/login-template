@@ -10,12 +10,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-4 img-profile">
-	   	 	<img src="https://www.psicologo.com.br/wp-content/uploads/sou-uma-pessoa-boa-ou-nao-1024x538.jpg" class="img-thumbnail rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+	   	 	<img th:src="${user.imageUrl}" class="img-thumbnail rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
 	    </div>
 	    <div class="col-8 align-self-center">
-	   	 	<h3 class="text-danger pb-3">Pedro Henrique</h3>
-	    	<p>Email: pedroclain@gmail.com</p>
-	    	<a href="login.html" class="text-danger"><-logout</a>
+	   	 	<h3 class="text-danger pb-3" th:text="${user.name}"></h3>
+	    	<p th:text="${user.email}"></p>
+	    	<a th:href="@{/logout}" class="text-danger"><-logout</a>
 	    </div>
 	</div>
 </div>

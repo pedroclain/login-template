@@ -4,8 +4,6 @@
     <title>bootstrap</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
 </head>
 <body>
 <div class="container login-container">
@@ -14,11 +12,12 @@
             <h1 class="m-5 text-danger align-center">Meu App</h1>
         </div>
         <div class="col-2">
-            <a href="login.html" class="text-danger">Entrar</a>
+            <a th:href="@{/login}" th:if="${user == null}" class="text-danger">Entrar</a>
+            <a th:href="@{/profile}" th:if="${user}" class="text-danger">Ver perfil</a>
         </div>
     </div>
-    <div class="row justify-content-center">
-            <img src="https://www.psicologo.com.br/wp-content/uploads/sou-uma-pessoa-boa-ou-nao-1024x538.jpg" class="img-thumbnail rounded-circle" style="width: 400px; height: 400px; object-fit: cover;">
+    <div class="row justify-content-center" th:if="${user}">
+            <img th:src="${user.imageUrl}" class="img-thumbnail rounded-circle" style="width: 400px; height: 400px; object-fit: cover;">
     </div>
 </div>
 

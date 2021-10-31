@@ -5,6 +5,10 @@ server:
     key-store-type: pkcs12
     key-alias: mykey
   port: 8443
+  error:
+    whitelabel:
+      enabled: false
+    path: /error
 
 spring:
     datasource:

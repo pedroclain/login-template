@@ -1,6 +1,7 @@
 package com.example.springsocial.model;
 
 import lombok.*;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,12 +25,5 @@ public class ApplicationUser extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     protected Provider provider;
     protected String roles;
-
-    public ApplicationUser(ApplicationUser applicationUser) {
-        this.name = applicationUser.getName();
-        this.email = applicationUser.getEmail();
-        this.password = applicationUser.getPassword();
-        this.provider = applicationUser.getProvider();
-        this.roles = applicationUser.getRoles();
-    }
+    protected String imageUrl;
 }

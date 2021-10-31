@@ -79,6 +79,7 @@ public class AuthController {
         applicationUser.setProvider(Provider.local);
         applicationUser.setPassword(passwordEncoder.encode(applicationUser.getPassword()));
         applicationUser.setRoles("USER");
+	 applicationUser.setImageUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSisT6Nb6XIXyX7kQ9XmEMID6eSxl4mQ8E0vXbwc77pJqhZYUUdU13h7VRlt4rZqOgg5Yc&usqp=CAU");
         applicationUserRepository.save(applicationUser);
 
         return "redirect:/login";

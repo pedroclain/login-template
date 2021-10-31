@@ -1,15 +1,27 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <title>Profile</title>
+	<title>Profile</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
-<h1>Profile</h1>
-<p>Ola <span th:text="${user.name}"></span>. Voce esta autenticado</p><br>
-<p>Email: <span th:text="${user.email}"></span></p>
-<p>Provedor: <span th:text="${user.provider}"></span></p>
-<a th:href="@{/logout}">Logout</a>
+<h1 class="m-5"><span class="text-danger">M</span>eu App</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-4 img-profile">
+	   	 	<img th:src="${user.imageUrl}" class="img-thumbnail rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+	    </div>
+	    <div class="col-8 align-self-center">
+	   	 	<h3 class="text-danger pb-3" th:text="${user.name}"></h3>
+	    	<p th:text="${user.email}"></p>
+	    	<a th:href="@{/logout}" class="text-danger"><-logout</a>
+	    </div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

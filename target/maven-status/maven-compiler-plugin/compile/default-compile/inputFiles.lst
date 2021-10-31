@@ -8,6 +8,7 @@
 /home/pedro/Desktop/backup2/projects/login-template/src/main/java/com/example/springsocial/security/RestAuthenticationEntryPoint.java
 /home/pedro/Desktop/backup2/projects/login-template/src/main/java/com/example/springsocial/security/oauth2/OAuth2AuthenticationFailureHandler.java
 /home/pedro/Desktop/backup2/projects/login-template/src/main/java/com/example/springsocial/controller/UserController.java
+/home/pedro/Desktop/backup2/projects/login-template/src/main/java/com/example/springsocial/controller/ErrorControllerImp.java
 /home/pedro/Desktop/backup2/projects/login-template/src/main/java/com/example/springsocial/security/oauth2/user/FacebookOAuth2UserInfo.java
 /home/pedro/Desktop/backup2/projects/login-template/src/main/java/com/example/springsocial/payload/SignUpRequest.java
 /home/pedro/Desktop/backup2/projects/login-template/src/main/java/com/example/springsocial/config/AppProperties.java

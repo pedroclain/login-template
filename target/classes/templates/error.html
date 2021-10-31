@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Error</title>
+</head>
+<body>
+	<div class="container align-items-center">
+		<div class="row justify-content-center m-5">
+			<div>
+				<h1 class="text-danger text-center" th:if="${code}" th:text="${code}" style="font-size: 70px">500</h1>
+				<h4 class="text-secondary text-center mb-5" th:if="${message}" th:text="${message}">Houve um problema no sistema</h4>
+				<a th:href="@{/}" class="text-danger"><- Inicio</a>
+			</div>
+		</div>
+	</div>
+</body> 
+</html>

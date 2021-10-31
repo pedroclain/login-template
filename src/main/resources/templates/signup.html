@@ -3,31 +3,28 @@
 <head>
     <title>bootstrap</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-<!------ Include the above in your HEAD tag ---------->
-<div class="alert alert-danger w3-center w3-animate-top">Entre com sua conta para acessar esse recurso!</div>
-<div class="container login-container">
+<div class="container">
     <h1 class="m-5"><span class="text-danger">M</span>eu App</h1>
     <div class="row justify-content-center">
     <div class="col-6">
         <h3 class="text-danger pb-3">Cadastre-se</h3>
-        <form>
+        <form th:action="@{/signup}" method="post">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nome" value="" />
+                <input type="text" class="form-control" placeholder="Nome" name="name" />
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email" value="" />
+                <input type="email" class="form-control" placeholder="Email" name="email"/>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Senha" value="" />
+                <input type="password" class="form-control" placeholder="Senha" name="password"/>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-danger" value="Criar" />
             </div>
             <div class="form-group">
-                <a href="login.html" class="text-danger">Ja tenho uma conta</a>
+                <a th:href="@{/login}" class="text-danger">Ja tenho uma conta</a>
             </div>
         </form>
     </div>
