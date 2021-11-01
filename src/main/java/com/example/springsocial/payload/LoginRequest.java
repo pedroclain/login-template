@@ -1,33 +1,19 @@
 package com.example.springsocial.payload;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
  * Created by rajeevkumarsingh on 02/08/17.
  */
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class LoginRequest implements Serializable {
-    @NotBlank
-    @Email
     private String username;
-
-    @NotBlank
     private String password;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

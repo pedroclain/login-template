@@ -1,7 +1,6 @@
 package com.example.springsocial.model;
 
 import lombok.*;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

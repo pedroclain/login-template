@@ -9,11 +9,11 @@
 <div class="container login-container">
     <div class="row align-items-center">
         <div class="col-10">
-            <h1 class="m-5 text-danger align-center">Meu App</h1>
+            <h1 class="m-5 text-danger align-center">My App</h1>
         </div>
         <div class="col-2">
-            <a th:href="@{/login}" th:if="${user == null}" class="text-danger">Entrar</a>
-            <a th:href="@{/profile}" th:if="${user}" class="text-danger">Ver perfil</a>
+            <a th:href="@{/login}" th:if="${user == null}" class="text-danger">Login</a>
+            <a th:href="@{/profile}" th:if="${user}" class="text-danger">My profile</a>
         </div>
     </div>
     <div class="row justify-content-center" th:if="${user}">
